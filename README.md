@@ -1,4 +1,4 @@
-p align="center"><img src="https://user-images.githubusercontent.com/6799467/65944518-68834d80-e421-11e9-9b14-6ca26a16108a.png" width="350px"></p>
+<p align="center"><img src="https://github.com/arch-based/fetcher/blob/main/2024-04-19T18:34:15,885058067+08:00.png?raw=true" width="350px"></p>
 <h1 align="center">fetcher</h1>
 <p align="center">A pretty system information tool written in bash</p><br>
 
