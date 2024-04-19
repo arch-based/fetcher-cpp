@@ -1,0 +1,67 @@
+#!/bin/env bash
+#Memory 
+#mem_total
+while IFS=":" read -r a b; do
+  case $a in
+    "MemTotal") ((mem_used+=${b/kB})); mem_total="${b/kB}" ;;
+    "Shmem") ((mem_used+=${b/kB}))  ;;
+    "MemFree" | "Buffers" | "Cached" | "SReclaimable")
+      mem_used="$((mem_used-=${b/kB}))"
+    ;;
+
+    # Available since Linux 3.14rc (34e431b0ae398fc54ea69ff85ec700722c9da773).
+    # If detected this will be used over the above calculation for mem_used.
+    "MemAvailable")
+      mem_avail=${b/kB}
+    ;;
+  esac
+done < /proc/meminfo
+
+if [[ $mem_avail ]]; then
+  mem_used=$(((mem_total - mem_avail) / 1024))
+else
+  mem_used="$((mem_used / 1024))"
+fi
+
+mem_total="$((mem_total / 1024))"
+memory="${mem_used}${mem_label:-MiB} / ${mem_total}${mem_label:-MiB}"
+
+## DEFINE COLORS
+
+# probably don't change these
+bold="$(tput bold)"
+black="$(tput setaf 0)"
+red="$(tput setaf 1)"
+green="$(tput setaf 2)"
+yellow="$(tput setaf 3)"
+blue="$(tput setaf 4)"
+magenta="$(tput setaf 5)"
+cyan="$(tput setaf 6)"
+white="$(tput setaf 7)"
+reset="$(tput sgr0)"
+
+# you can change these
+lc="${reset}${bold}${cyan}"		# labels
+nc="${reset}${bold}${cyan}"		# user and hostname
+ic="${reset}${bold}${white}"	# info
+c0="${reset}${bold}${cyan}"		# first color
+c1="${reset}${cyan}"			# second color
+
+read -r name    < /sys/devices/virtual/dmi/id/product_name
+read -r version < /sys/devices/virtual/dmi/id/product_version
+
+host="$name $version $model"
+
+cat <<EOF
+${c6}       /\\        ${nc}${USER}${ic}@${nc}$(cat /etc/hostname)${reset}
+${c6}      /  \\       ${c0}------------------------
+${c6}     /\\   \\      ${c0} OS: ${ic}$(hostnamectl | grep "Operating System" | awk '{print $3,$4}')
+${c4}    /      \\     ${c0}󰌢 HOST: ${ic}${host}
+${c4}   /   ,,   \\    ${c0}󰅐 UPTIME: ${ic}$(uptime -p | awk '{print $2,$3,$4}')
+${c4}  /   |  |  -\\   ${c0} KERNEL: ${ic}$(uname -sr)
+${c4} /_-''    ''-_\\  ${c0} SHELL: ${ic}$(fish --version)
+                 ${c0} PACKAGES: ${ic}$(pacman -Qe | wc -l)
+                 ${c0}󰍛 MEMORY: ${ic}${memory}
+                 
+EOF
+# Feel free to set anything for the variables
