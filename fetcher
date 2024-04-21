@@ -57,9 +57,9 @@ ${c6}       /\\        ${nc}${USER}${ic}@${nc}$(cat /etc/hostname)${reset}
 ${c6}      /  \\       ${c0}------------------------
 ${c6}     /\\   \\      ${c0} OS: ${ic}$(hostnamectl | grep "Operating System" | awk '{print $3,$4}')
 ${c4}    /      \\     ${c0}󰌢 HOST: ${ic}${host}
-${c4}   /   ,,   \\    ${c0}󰅐 UPTIME: ${ic}$(uptime -p | awk '{print $2,$3,$4}')
+${c4}   /   ,,   \\    ${c0}󰅐 UPTIME: ${ic}$(uptime -p | awk '{print $2,$3,$4,$5}')
 ${c4}  /   |  |  -\\   ${c0} KERNEL: ${ic}$(uname -sr)
-${c4} /_-''    ''-_\\  ${c0} SHELL: ${ic}$(fish --version)
+${c4} /_-''    ''-_\\  ${c0} SHELL: ${ic}$($SHELL --version | awk '{print $1, $2}')
                  ${c0} PACKAGES: ${ic}$(pacman -Qe | wc -l)
                  ${c0}󰍛 MEMORY: ${ic}${memory}
                  
