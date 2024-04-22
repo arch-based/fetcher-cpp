@@ -53,15 +53,15 @@ read -r version < /sys/devices/virtual/dmi/id/product_version
 host="$name $version $model"
 
 cat <<EOF
-${nc}${USER}${ic}@${nc}$(cat /etc/hostname)${reset}
-${c0}------------------------
-${c0} OS ~~~~~~~~> ${ic}$(hostnamectl | grep "Operating System" | awk '{print $3,$4}')
-${c0}󰌢 HOST: ~~~~~> ${ic}${host}
-${c0}󰅐 UPTIME: ~~~> ${ic}$(uptime -p | sed 's/up //')
-${c0} KERNEL: ~~~> ${ic}$(uname -sr)
-${c0} SHELL: ~~~~> ${ic}$(basename $SHELL)
-${c0} PACKAGES: ~> ${ic}$(pacman -Qe | wc -l)
-${c0}󰍛 MEMORY: ~~~> ${ic}${memory}
+${nc}                    ${USER}${ic}@${nc}$(cat /etc/hostname)${reset}
+${c0}          ------------------------------
+${c0} OS ~~~~~~~~~~> ${ic}$(hostnamectl | grep "Operating System" | awk '{print $3,$4}')
+${c0}󰌢 HOST: ~~~~~~~> ${ic}${host}
+${c0}󰅐 UPTIME: ~~~~~> ${ic}$(uptime -p | sed 's/up //')
+${c0} KERNEL: ~~~~~> ${ic}$(uname -sr)
+${c0} SHELL: ~~~~~~> ${ic}$(basename $SHELL)
+${c0} PACKAGES: ~~~> ${ic}$(pacman -Qe | wc -l)
+${c0}󰍛 MEMORY: ~~~~~> ${ic}${memory}
                  
 EOF
 exit 0
