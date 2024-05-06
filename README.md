@@ -10,8 +10,15 @@ that lets you become an elitist of Arch Linux by showing you like CPP/C++.
  The"fetcher" script is a lightweight Bash tool that displays system information very quickly but it quickly got rewritten in C++ because of its immense slowness :( it was 0.3 seconds away from our goal of 0.0 seconds.  
 This focus on efficiency and visual appeal makes fetcher a great option for users who value both functionality and style.
 
-This tool is mainly focused to arch-based distros and arch linux so don't be surprised if you do not see a logo of your distro here.
+This tool is mainly focused to arch-based distros and arch linux so don't be surprised if you see some missing values.
 
+Since this git repo isn't offering a binary for the cpp rewrite you'll have to compile it yourself using the following:
+```
+$ git clone https://github.com/arch-based/fetcher-cpp
+cd fetcher-cpp
+$ g++ system_info.cpp -o fetcher
+# mv fetcher /usr/bin/fetcher
+```
 
 <br>
 <br>
