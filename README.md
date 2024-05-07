@@ -11,7 +11,7 @@ that lets you become an elitist of Arch Linux by showing you like CPP/C++.
 
 The old "fetcher" script is a lightweight Bash tool that displays system information very quickly but it quickly got rewritten in C++ because of its immense slowness :( it was 0.3 seconds away from our goal of 0.10 seconds of 0.13. Now with C++ it's 0.8! :) 
 
-Using time scales we scaled that fast fetch is 0.14 in user and 0.8 in system. While my tool is 0.04s in system and 0.08s in user. Though my tool is faster it is said that fastfetch is universal, while my tool is just for arch. You can choose between us! No worries, I am not forcing you to use my tool.
+Using time scales we scaled that fast fetch, is 0.14 in user, and 0.8 in system, while with my tool it is 0.04s in system, and 0.08s in user. Although my tool is faster, it is said that fastfetch is universal, while my tool is just for arch linux. You can choose between us! No worries, I am not forcing you to use my tool.
 
 As said, this tool is focused on arch-based systems or arch linux itself as the only repo that it supports for now is in the A.U.R format or in this github repo.
 
