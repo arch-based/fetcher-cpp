@@ -13,7 +13,7 @@ The old "fetcher" script is a lightweight Bash tool that displays system informa
 
 Using time scales we scaled that fast fetch is 0.14 in user and 0.8 in system. While my tool is 0.04s in system and 0.08s in user. Though my tool is faster it is said that fastfetch is universal, while my tool is just for arch. You can choose between us! No worries, I am not forcing you to use my tool.
 
-As said, this tool is only used in arch-based systems or arch linux itself as the only repo that it supports for now is in the A.U.R format or in this github repo.
+As said, this tool is focused on arch-based systems or arch linux itself as the only repo that it supports for now is in the A.U.R format or in this github repo.
 
 # Installation
 
@@ -30,11 +30,11 @@ To install using the A.U.R repo, use any aur-helper using paru or yay.
 # For paru:
 $ paru -S fetcher-based
 
-# For yay
+# For yay:
 $ yay -S fetcher-based
 ```
 
-If you'd like to use the a.u.r repo manually use this method:
+If you'd like to use the A.U.R repo manually, use this method:
 ```
 $ git clone https://aur.archlinux.org/fetcher-based.git ~/fetcher-based
 $ cd fetcher-based
