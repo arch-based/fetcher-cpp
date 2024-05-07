@@ -1,23 +1,50 @@
 <p align="center"><img src="https://github.com/arch-based/fetcher-cpp/blob/main/fetcher2.png?raw=true" width="500px"></p>
-<h1 align="center">fetcher</h1>
-<p align="center">A pretty system information tool written in bash</p><br>
+<h1 align="center">fetcher-based</h1>
+<p align="center">A pretty bash system information tool re-written in C++</p><br>
 
-This rewrite of fetcher prioritizes speed and resource efficiency by focusing 
+# Description
+
+This rewrite of fetcher-based prioritizes speed and resource efficiency by focusing 
 on essential data retrieval with minimal overhead. This makes it a good
 choice when you need system information quickly and simply. The only tool
 that lets you become an elitist of Arch Linux by showing you like CPP/C++.
 
- The"fetcher" script is a lightweight Bash tool that displays system information very quickly but it quickly got rewritten in C++ because of its immense slowness :( it was 0.3 seconds away from our goal of 0.0 seconds.  
-This focus on efficiency and visual appeal makes fetcher a great option for users who value both functionality and style.
+The old "fetcher" script is a lightweight Bash tool that displays system information very quickly but it quickly got rewritten in C++ because of its immense slowness :( it was 0.3 seconds away from our goal of 0.10 seconds of 0.13. Now with C++ it's 0.8! :)  
+
+# Installation
 
 This tool is mainly focused to arch-based distros and arch linux so don't be surprised if you see some missing values.
 
-Since this git repo isn't offering a binary for the cpp rewrite you'll have to compile it yourself using the following:
+Since this git repo isn't offering a binary for the cpp rewrite but the aur repo does you'll have to compile it yourself using the following:
 ```
 $ git clone https://github.com/arch-based/fetcher-cpp
 cd fetcher-cpp
 $ g++ system_info.cpp -o fetcher
 # mv fetcher /usr/bin/fetcher
+```
+To install using the A.U.R repo, use any aur-helper using paru or yay.
+
+```
+# For paru:
+$ paru -S fetcher-based
+
+# For yay
+$ yay -S fetcher-based
+```
+
+If you'd like to use the a.u.r repo manually use this method:
+```
+$ git clone https://aur.archlinux.org/fetcher-based.git ~/fetcher-based
+$ cd fetcher-based
+$ makepkg -si 
+
+```
+
+# Usage
+
+You can use it with the command fetcher.
+```
+fetcher
 ```
 
 <br>
