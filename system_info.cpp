@@ -95,14 +95,6 @@ int main() {
   string memory = to_string(mem_used) + mem_label + " / " + to_string(mem_total) + mem_label;
 
   string bold = captureOutput("tput bold");
-  string black = captureOutput("tput setaf 0");
-  string red = captureOutput("tput setaf 1");
-  string green = captureOutput("tput setaf 2");
-  string yellow = captureOutput("tput setaf 3");
-  string blue = captureOutput("tput setaf 4");
-  string magenta = captureOutput("tput setaf 5");
-  string cyan = captureOutput("tput setaf 6");
-  string white = captureOutput("tput setaf 7");
   string reset = captureOutput("tput sgr0");
   string hostname = captureOutput("cat /etc/hostname");
   string os_info = captureOutput("hostnamectl | grep \"Operating System\" | awk '{print $3,$4}'");
