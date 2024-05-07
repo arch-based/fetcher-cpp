@@ -105,9 +105,6 @@ int main() {
   string white = captureOutput("tput setaf 7");
   string reset = captureOutput("tput sgr0");
   string hostname = captureOutput("cat /etc/hostname");
-  cout << "\033[36m" << bold << "                    " << getenv("USER") << "\033[37m" << bold << "@" "\033[36m" << bold << hostname;
-  cout << "\033[36m" << bold << "          ------------------------------" << endl;
-
   string os_info = captureOutput("hostnamectl | grep \"Operating System\" | awk '{print $3,$4}'");
   string uptime_info = captureOutput("uptime -p | sed 's/up //'");
   string kernel_info = captureOutput("uname -sr");
@@ -115,6 +112,8 @@ int main() {
 	// string hostname = captureOutput("cat /etc/hostname");
   // Replace with your package manager command
   string package_count = captureOutput("pacman -Qe | wc -l");
+  cout << "\033[36m" << bold << "                    " << getenv("USER") << "\033[37m" << bold << "@" "\033[36m" << bold << hostname;
+  cout << "\033[36m" << bold << "          ------------------------------" << endl;
 
   cout << "\033[36m" << bold << " OS: ~~~~~~~~~> " << "\033[37m" << bold << os_info;
   cout << "\033[36m" << bold << "󰌢 HOST: ~~~~~~~> " << "\033[37m" << bold << host << endl;
