@@ -37,17 +37,11 @@ If you'd like to use the a.u.r repo manually use this method:
 $ git clone https://aur.archlinux.org/fetcher-based.git ~/fetcher-based
 $ cd fetcher-based
 $ makepkg -si 
-
 ```
 
 # Usage
 
-You can use it with the command fetcher.
+You can use it with the command: fetcher which is inside of /usr/bin.
 ```
 fetcher
 ```
-
-<br>
-<br>
-<br>
-<br>
