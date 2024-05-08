@@ -7,7 +7,7 @@
 This rewrite of fetcher-based prioritizes speed and resource efficiency by focusing 
 on essential data retrieval with minimal overhead. This makes it a good
 choice when you need system information quickly and simply. The only tool
-that lets you become an elitist of Arch Linux by showing you the old coding language: CPP/C++.
+that lets you become an elitist of Arch Linux by showing you the old coding language: CPP/C++. It only has 100 lines of code.
 
 The old "fetcher" script is a lightweight Bash tool that displays system information very quickly but it quickly got rewritten in Pure C++ no shell script at all, because of its immense slowness :( it was 0.3 seconds away from our goal of 0.10 seconds of 0.13. Now with C++ it's 0.8! :) 
 
