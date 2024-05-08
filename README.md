@@ -17,7 +17,7 @@ As said, this tool is focused on arch-based systems or arch linux itself as the 
 
 # Installation
 
-Since this git repo isn't offering a binary for the cpp rewrite but the aur repo does you'll have to compile it yourself using the following:
+Since this git repo isn't offering a binary for the cpp rewrite but the A.U.R tarball has, you'll have to compile it yourself or extract the tarball using the following:
 ```
 $ git clone https://github.com/arch-based/fetcher-cpp
 cd fetcher-cpp
@@ -40,7 +40,13 @@ $ git clone https://aur.archlinux.org/fetcher-based.git ~/fetcher-based
 $ cd fetcher-based
 $ makepkg -si 
 ```
-
+To do it manually using the tarball:
+```
+$ wget https://github.com/arch-based/fetcher-cpp/raw/main/fetcher.tar.gz -O fetcher.tar.gz
+$ tar -xvf fetcher.tar.gz
+$ chmod 0755 fetcher
+$ mv fetcher /usr/bin/fetcher
+```
 # Usage
 
 You can use it with the command: fetcher which is inside of /usr/bin.
