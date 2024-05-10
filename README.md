@@ -2,6 +2,9 @@
 <h1 align="center">fetcher-based</h1>
 <p align="center">A pretty bash system information tool re-written in pure C++</p><br>
 
+# Deprecation
+_**After the rust reimplementation, this has now been deprecated. The rust re-implementation is way safer and better because of the fact this programming language is nice but unsecure with its vulnerabilities.**_
+
 # Description
 
 This rewrite of fetcher-based prioritizes speed and resource efficiency by focusing 
